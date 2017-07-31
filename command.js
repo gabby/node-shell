@@ -45,10 +45,24 @@ exports.cat = function(file){
   fs.readFile(file, function(err, file) {
     if(err) process.stdout.write(err);
     else process.stdout.write(file);
+    process.stdout.write(chalk.yellow('\nprompt > '));
+  });
+}
+
+exports.head = function(file){
+  fs.readFile(file, function(err, file) {
+    if(err) {
+      process.stdout.write(err);
+    } else {
+      var count = 0;
+      while( count<=5 ){
+        var text = file.toString().split('\n');
+        process.stdout.write(text[count]);
+        count++;
+      }
+    }
   });
   process.stdout.write(chalk.yellow('\nprompt > '));
 }
-
-exports.head = function(file){ }
 
 exports.tail = function(file){ }
