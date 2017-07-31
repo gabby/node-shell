@@ -1,17 +1,16 @@
+var getCommand = require('./command')
+
 process.stdout.write('prompt >');
 
 process.stdin.on('data', function(data) {
   var cmd = data.toString().trim();
 
   if(cmd=='pwd') {
-    process.stdout.write(process.env.PWD);
-    process.stdout.write('\nprompt > ');
+    getCommand.getPWD(cmd);
   } else if(cmd =='date'){
-    var date = new Date();
-    process.stdout.write(date.toString());
-    process.stdout.write('\nprompt > ');
+    getCommand.getDate(cmd);
   } else if(cmd == 'exit'){
-    process.exit();
+    getCommand.exitProcess(cmd);
   } else {
     process.stdout.write('You typed: ' + cmd);
     process.stdout.write('\nprompt > ');
