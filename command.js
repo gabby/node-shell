@@ -5,7 +5,7 @@ function getCommand(cmd) {
   this.cmd = cmd;
 }
 
-var getPWD = function() {
+var getPWD = function(cmd) {
   process.stdout.write(process.env.PWD);
   process.stdout.write(chalk.yellow('\nprompt > '));
 }
