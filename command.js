@@ -30,4 +30,12 @@ exports.getLS = function(cmd) {
     }
   }
   process.stdout.write('\nprompt > ');
+} 
+
+exports.getEcho = function(args){
+  // var getStr = cmd.split(" ").slice(1).join(' ');
+  if (args==='$PATH') {
+    process.stdout.write(process.env.PATH);
+  } else process.stdout.write(args);
+  process.stdout.write('\nprompt > ');
 }
