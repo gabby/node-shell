@@ -1,0 +1,22 @@
+{
+  "name": "node-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bash.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Corvids/node-shell.git"
+  },
+  "author": "Jennifer & Gabby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Corvids/node-shell/issues"
+  },
+  "homepage": "https://github.com/Corvids/node-shell#readme",
+  "dependencies": {
+    "chalk": "^2.0.1"
+  }
+}

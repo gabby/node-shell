@@ -1,5 +1,6 @@
 var getCommand = require('./command')
 var fs = require('fs');
+var chalk = require(`chalk`);
 
 process.stdout.write('prompt >');
 

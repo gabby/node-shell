@@ -1,4 +1,5 @@
 var fs = require('fs');
+var chalk = require('chalk');
 
 function getCommand(cmd) {
   this.cmd = cmd;
