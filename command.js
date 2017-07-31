@@ -41,7 +41,13 @@ exports.getEcho = function(args){
   process.stdout.write(chalk.yellow('\nprompt > '));
 }
 
-exports.cat = function(file){ }
+exports.cat = function(file){
+  fs.readFile(file, function(err, file) {
+    if(err) process.stdout.write(err);
+    else process.stdout.write(file);
+  });
+  process.stdout.write(chalk.yellow('\nprompt > '));
+}
 
 exports.head = function(file){ }
 

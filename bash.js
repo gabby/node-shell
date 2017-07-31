@@ -23,6 +23,8 @@ process.stdin.on('data', function(data) {
       break;
     case 'echo':
       getCommand.getEcho(args.join(' '));
+    case 'cat':
+      getCommand.cat(args[0]);
     default:
       process.stdout.write('You typed: ' + cmd);
       process.stdout.write(chalk.yellow('\nprompt > '));
