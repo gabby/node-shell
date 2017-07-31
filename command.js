@@ -51,18 +51,19 @@ exports.cat = function(file){
 
 exports.head = function(file){
   fs.readFile(file, function(err, file) {
+    //console.log(file.toString().split('\n'));
     if(err) {
       process.stdout.write(err);
     } else {
       var count = 0;
-      while( count<=5 ){
-        var text = file.toString().split('\n');
+      while( count<5 ){
+        var text = file.toString().split('\r');
         process.stdout.write(text[count]);
         count++;
       }
     }
+    process.stdout.write(chalk.yellow('\nprompt > '));
   });
-  process.stdout.write(chalk.yellow('\nprompt > '));
 }
 
 exports.tail = function(file){ }
