@@ -7,7 +7,7 @@ function getCommand(cmd) {
 
 var getPWD = function() {
   process.stdout.write(process.env.PWD);
-  process.stdout.write('\nprompt > ');
+  process.stdout.write(chalk.yellow('\nprompt > '));
 }
 
 exports.getPWD = getPWD;
@@ -15,7 +15,7 @@ exports.getPWD = getPWD;
 exports.getDate = function(cmd) {
   var date = new Date();
   process.stdout.write(date.toString());
-  process.stdout.write('\nprompt > ');
+  process.stdout.write(chalk.yellow('\nprompt > '));
 }
 
 exports.exitProcess = function(cmd) {
@@ -30,13 +30,13 @@ exports.getLS = function(cmd) {
       process.stdout.write(out[i]+'\n');
     }
   }
-  process.stdout.write('\nprompt > ');
-} 
+  process.stdout.write(chalk.yellow('\nprompt > '));
+}
 
 exports.getEcho = function(args){
   // var getStr = cmd.split(" ").slice(1).join(' ');
   if (args==='$PATH') {
     process.stdout.write(process.env.PATH);
   } else process.stdout.write(args);
-  process.stdout.write('\nprompt > ');
+  process.stdout.write(chalk.yellow('\nprompt > '));
 }
