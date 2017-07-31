@@ -1,4 +1,5 @@
 var getCommand = require('./command')
+var fs = require('fs');
 
 process.stdout.write('prompt >');
 
@@ -11,6 +12,9 @@ process.stdin.on('data', function(data) {
     getCommand.getDate(cmd);
   } else if(cmd == 'exit'){
     getCommand.exitProcess(cmd);
+  }
+  else if(cmd == 'ls'){
+    getCommand.getLS(cmd);
   } else {
     process.stdout.write('You typed: ' + cmd);
     process.stdout.write('\nprompt > ');
