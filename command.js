@@ -40,3 +40,9 @@ exports.getEcho = function(args){
   } else process.stdout.write(args);
   process.stdout.write(chalk.yellow('\nprompt > '));
 }
+
+exports.cat = function(file){ }
+
+exports.head = function(file){ }
+
+exports.tail = function(file){ }

@@ -6,6 +6,7 @@ process.stdout.write(chalk.yellow('prompt >'));
 
 process.stdin.on('data', function(data) {
   var cmd = data.toString().trim().split(' ')[0];
+  var args = data.toString().trim().split(' ').slice(1);
 
   switch (cmd) {
     case 'pwd':
@@ -21,7 +22,6 @@ process.stdin.on('data', function(data) {
       getCommand.getLS(cmd);
       break;
     case 'echo':
-      var args = data.toString().trim().split(' ').slice(1);
       getCommand.getEcho(args.join(' '));
     default:
       process.stdout.write('You typed: ' + cmd);
